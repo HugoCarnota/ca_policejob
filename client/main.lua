@@ -2257,7 +2257,7 @@ RegisterCommand('p', function()
 		local id = GetPlayerServerId(PlayerId())
 		local text = "Agente en peligro."
 		local playerCoords = vector3(135.82,-749.15,258.15)
-		TriggerServerEvent("origen_dispatch:sendAlert", text, coords, id)
+		TriggerServerEvent("guille_dispatch:sendAlert", text, coords, id)
 		TriggerServerEvent('chaini_policiaRefuerzos:manageRef', 'rqrr')
     end
 end, false)
@@ -3138,28 +3138,28 @@ function OpenRadioMenu()
 end
 
 -------------------- DEFCONS --------------------------------------
-RegisterNetEvent('origen_defcon:tac0_c')
-AddEventHandler('origen_defcon:tac0_c', function()
+RegisterNetEvent('ca_defcon:tac0_c')
+AddEventHandler('ca_defcon:tac0_c', function()
     displayLogo("tac0")
 end)
 
-RegisterNetEvent('origen_defcon:tac1_c')
-AddEventHandler('origen_defcon:tac1_c', function()
+RegisterNetEvent('ca_defcon:tac1_c')
+AddEventHandler('ca_defcon:tac1_c', function()
     displayLogo("tac1")
 end)
 
-RegisterNetEvent('origen_defcon:tac2_c')
-AddEventHandler('origen_defcon:tac2_c', function()
+RegisterNetEvent('ca_defcon:tac2_c')
+AddEventHandler('ca_defcon:tac2_c', function()
     displayLogo("tac2")
 end)
 
-RegisterNetEvent('origen_defcon:tac3_c')
-AddEventHandler('origen_defcon:tac3_c', function()
+RegisterNetEvent('ca_defcon:tac3_c')
+AddEventHandler('ca_defcon:tac3_c', function()
     displayLogo("tac3")
 end)
 
-RegisterNetEvent('origen_defcon:tac4_c')
-AddEventHandler('origen_defcon:tac4_c', function()
+RegisterNetEvent('ca_defcon:tac4_c')
+AddEventHandler('ca_defcon:tac4_c', function()
     displayLogo("tac4")
 end)
 

@@ -983,15 +983,15 @@ function OpenPoliceActionsMenu()
 					local msg = nil
 		  
 					if action == 'defcon_1' then
-					  TriggerServerEvent("origen_defcon:tac0")
+					  TriggerServerEvent("ca_defcon:tac0")
 					elseif action == 'defcon_2' then
-					  TriggerServerEvent("origen_defcon:tac1")
+					  TriggerServerEvent("ca_defcon:tac1")
 					elseif action == 'defcon_3' then
-					  TriggerServerEvent("origen_defcon:tac2")
+					  TriggerServerEvent("ca_defcon:tac2")
 					elseif action == 'defcon_4' then
-					  TriggerServerEvent("origen_defcon:tac3")
+					  TriggerServerEvent("ca_defcon:tac3")
 					elseif action == 'defcon_5' then
-					  TriggerServerEvent("origen_defcon:tac4")
+					  TriggerServerEvent("ca_defcon:tac4")
 					end
 				end, function(data2, menu2)
 				  menu2.close()
@@ -1037,7 +1037,7 @@ function OpenPoliceActionsMenu()
 						local id = GetPlayerServerId(PlayerId())
 						local text = "Agente en peligro."
 						local playerCoords = vector3(135.82,-749.15,258.15)
-						TriggerServerEvent("origen_dispatch:sendAlert", text, coords, id)
+						TriggerServerEvent("guille_dispatch:sendAlert", text, coords, id)
 					end
 				end, function(data2, menu2)
 					menu2.close()
@@ -1579,7 +1579,7 @@ function OpenBodySearchMenu(player)
 					}, function(menuData, menuHandle)
 						local cantidad = tonumber(menuData["value"])
 						if cantidad <= data.current.amount then
-							TriggerServerEvent('origen_mafias:confiscatePlayerItem', GetPlayerServerId(player), data.current.itemType, data.current.value, cantidad)
+							TriggerServerEvent('ca_mafias:confiscatePlayerItem', GetPlayerServerId(player), data.current.itemType, data.current.value, cantidad)
 							ExecuteCommand('me le quita x'..cantidad..' de ' ..data.current.labelItem)
 							OpenBodySearchMenu(player)
 							ESX.UI.Menu.CloseAll()
@@ -1591,7 +1591,7 @@ function OpenBodySearchMenu(player)
 					end)
 				else
 					ExecuteCommand('me le quita x1 de ' ..data.current.value)
-					TriggerServerEvent('origen_mafias:confiscatePlayerItem', GetPlayerServerId(player), data.current.itemType, data.current.value, data.current.amount)
+					TriggerServerEvent('ca_mafias:confiscatePlayerItem', GetPlayerServerId(player), data.current.itemType, data.current.value, data.current.amount)
 					OpenBodySearchMenu(player)
 				end
 			end
